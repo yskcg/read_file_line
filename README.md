@@ -1,2 +1,17 @@
 # read_file_line
-嵌入式中读取小文件中制定行内容，C语言实现
+c 语言实现读取指定文件中指定行
+###interface function
+>
+>char * read_file_line(char *path,int line)
+>
+
+###usage
+>
+`char *buf =NULL;
+buf = read_file_line("xxx/yyy",1);
+printf("line one content is:%s\n",buf);
+free(buf);`
+
+###*note
+>must free the maclloc memery .
+
