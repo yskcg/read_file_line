@@ -9,7 +9,7 @@ char * read_file_line(char *path,int line)
 	int read_line = 0;
 	int read_line_offset = 0;
 	int read_line_size;
-	char *content =NULL;
+	static char content[256] = {0};
 	char *p = NULL;
 	
 	fp = fopen(path,"r");
@@ -37,7 +37,7 @@ char * read_file_line(char *path,int line)
 	if(line ==1){
 		read_line_offset = readsize - first_line_size;
 	}
-	content = (char *)malloc(read_line_size);
+	//content = (char *)malloc(read_line_size);
 	fseek(fp,read_line_offset,SEEK_SET);
 	fread(content,read_line_size,1,fp);
 	p = content;
@@ -53,7 +53,7 @@ int main(int argc, char** argv)
   
   printf("line %d:%s",i,line_content); 
    
-  free(line_content);
+  //free(line_content);
   return 0; 
 } 
 
