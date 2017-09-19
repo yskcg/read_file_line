@@ -38,7 +38,7 @@ char * read_file_line(char *path,int line)
 		read_line_offset = readsize - first_line_size;
 	}
 	//content = (char *)malloc(read_line_size);
-	fseek(fp,read_line_offset,SEEK_SET);
+	fseek(fp,read_line_offset+1,SEEK_SET);
 	fread(content,read_line_size,1,fp);
 	p = content;
 	fclose(fp);
